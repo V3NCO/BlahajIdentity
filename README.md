@@ -1,38 +1,11 @@
 # Blahaj Identity
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+A simple website that will make a profile for your beloved haj!
 
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
-```sh
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+## Setting up a dev environment
+- Clone the repo `git clone https://github.com/V3NCO/BlahajIdentity.git`
+- Install the dependencies `yarn install`
+- Start the database `yarn run db:start`
+- Migrate it `yarn run db:migrate`
+- Start the dev server `yarn dev`
+*Do you not have yarn ? too bad :p just install it or use something else*
