@@ -1,6 +1,6 @@
 {
-  "id": "c3d50e39-d742-4bfa-8778-fa3effca7f99",
-  "prevId": "00000000-0000-0000-0000-000000000000",
+  "id": "fea5b601-9895-43b4-9370-4ca6f9250a10",
+  "prevId": "c3d50e39-d742-4bfa-8778-fa3effca7f99",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
@@ -58,6 +58,42 @@
         "description": {
           "name": "description",
           "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "pronouns": {
+          "name": "pronouns",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "gender": {
+          "name": "gender",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "floof": {
+          "name": "floof",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "squish": {
+          "name": "squish",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "lastwashed": {
+          "name": "lastwashed",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "mloftearsabsorbed": {
+          "name": "mloftearsabsorbed",
+          "type": "real",
           "primaryKey": false,
           "notNull": false
         }
