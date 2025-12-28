@@ -1,0 +1,1 @@
+ALTER TABLE "blahajs" ADD COLUMN "uuid" uuid;

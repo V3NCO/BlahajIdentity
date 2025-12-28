@@ -1,7 +1,8 @@
-import { pgTable, integer, varchar, date, json, text, real } from 'drizzle-orm/pg-core';
+import { pgTable, integer, varchar, date, json, text, real, uuid } from 'drizzle-orm/pg-core';
 
 export const blahajsTable = pgTable('blahajs', {
-	id: integer().primaryKey().generatedAlwaysAsIdentity(), // the id
+	id: integer().primaryKey().generatedAlwaysAsIdentity(), // the primary key
+	uuid: uuid(), // the profile id
 	name: varchar({ length: 255 }).notNull(), // the name of the haj
 	date: date(), // the date the blahaj was adopted
 	size: varchar({ length: 255 }).notNull(), // the size of the haj
