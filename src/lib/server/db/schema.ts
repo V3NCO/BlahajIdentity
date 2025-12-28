@@ -16,3 +16,6 @@ export const blahajsTable = pgTable('blahajs', {
 	lastwashed: date(), // last time the haj has been washed
 	mloftearsabsorbed: real() //i want to make this an easter egg
 });
+
+// Custom fields are an afterthought, I will implement them, but in an overengineered way because its funny
+// I could do it through a simple custom: json() field but no
