@@ -1,0 +1,1 @@
+ALTER TABLE "blahajs" DROP COLUMN "modifications";

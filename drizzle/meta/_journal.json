@@ -36,6 +36,13 @@
       "when": 1766943343542,
       "tag": "0004_same_puma",
       "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1766944841442,
+      "tag": "0005_exotic_mantis",
+      "breakpoints": true
     }
   ]
 }
