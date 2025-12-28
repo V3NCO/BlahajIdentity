@@ -1,0 +1,1 @@
+ALTER TABLE "blahajs" ALTER COLUMN "location" SET DATA TYPE text;

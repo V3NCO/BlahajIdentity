@@ -7,7 +7,7 @@ export const blahajsTable = pgTable('blahajs', {
 	date: date(), // the date the blahaj was adopted
 	size: varchar({ length: 255 }).notNull(), // the size of the haj
 	modifications: json(), // if it was modified in any way and how/what
-	location: json(), // where the blahaj was adopted
+	location: text(), // where the blahaj was adopted
 	description: text(),
 	pronouns: varchar({ length: 255 }).notNull(), // the blahaj's pronouns!
 	gender: varchar({ length: 255 }).notNull(), // the blahaj's gender!
