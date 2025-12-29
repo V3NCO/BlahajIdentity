@@ -1,5 +1,6 @@
 <script lang="ts">
 	import StarInput from '$lib/assets/StarInpt.svelte'
+	import { goto } from '$app/navigation'
 
 	let name: string ;
 	let date: string | null;
@@ -9,8 +10,8 @@
 	let description: string | null;
 	let pronouns: string;
 	let gender: string;
-	let floof: number | null;
-	let squish: number | null;
+	let floof: number | undefined;
+	let squish: number | undefined;
 	let lastwashed: string | null;
 	let mloftearsabsorbed: number | null = null;
 
@@ -46,11 +47,13 @@
 				mloftearsabsorbed: mloftearsabsorbed
 			}
 
-			const sent = await fetch(`/api/blahaj`, {
+			await fetch(`/api/blahaj`, {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify(data)
 			})
+			// eslint-disable-next-line svelte/no-navigation-without-resolve
+			await goto(`/blahaj?id=${uuid}`)
 			return null;
 		} else {
 			alert("You didn't fill in every required field!")
