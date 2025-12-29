@@ -19,13 +19,11 @@ COPY --from=builder /app/drizzle drizzle/
 COPY ./entrypoint.sh /app/entrypoint.sh
 # Copy only production dependencies to keep the image small
 COPY package.json yarn.lock* ./
-RUN chmod +x /app/entrypoint.sh
 RUN yarn install --production --frozen-lockfile
 
 EXPOSE 3000
 ENV NODE_ENV=production
 
 
-ENTRYPOINT [ "/app/entrypoint.sh" ]
 # SvelteKit adapter-node default entry point is build/index.js
 CMD [ "node", "build/index.js" ]
