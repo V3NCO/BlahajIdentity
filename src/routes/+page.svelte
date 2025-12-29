@@ -13,6 +13,49 @@
 	let squish: number | null;
 	let lastwashed: string | null;
 	let mloftearsabsorbed: number | null = null;
+
+	const sendhaj = async () => {
+		if (name && size && pronouns && gender) {
+			let finalsize
+			if (size === 'other') {
+				finalsize = sizeothr
+			} else {
+				finalsize = size
+			}
+
+			type UuidType = {
+				uuid: string
+			};
+
+			const uuidres = await fetch('/api/uuid');
+			const uuidjson: UuidType = await uuidres.json();
+			const uuid = uuidjson['uuid'];
+
+			const data = {
+				uuid: uuid,
+				name: name,
+				date: date,
+				size: finalsize,
+				location: location,
+				description: description,
+				pronouns: pronouns,
+				gender: gender,
+				floof: floof,
+				squish: squish,
+				lastwashed: lastwashed,
+				mloftearsabsorbed: mloftearsabsorbed
+			}
+
+			const sent = await fetch(`/api/blahaj`, {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify(data)
+			})
+			return null;
+		} else {
+			alert("You didn't fill in every required field!")
+		}
+	};
 </script>
 
 <h1>Welcome to BlahajIdentity!</h1>
@@ -34,3 +77,4 @@
 <span>Floofiness level: </span><StarInput bind:value={floof} /><br/>
 <span>Squishiness level: </span><StarInput bind:value={squish} /><br/>
 <label for="lastwashed">Last time it was washed: </label> <input id="lastwashed" class="dateinput" type="date" bind:value={lastwashed} /><br/>
+<button onclick={() => {sendhaj()}}>Register my Haj!</button>

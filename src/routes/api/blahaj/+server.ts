@@ -22,5 +22,10 @@ export const GET: RequestHandler = async ({ url }) => {
 	} else {
 		return json({ ok: false, message: 'No blahaj for this uuid lol' }, { status: 400 });
 	}
+};
 
+export const POST: RequestHandler = async({ request }) => {
+	const body = await request.json();
+	await db.insert(blahajsTable).values(body);
+	return json({ ok: true, message: "success" });
 };

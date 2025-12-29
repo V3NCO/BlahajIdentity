@@ -45,6 +45,7 @@
 		"vite": "^7.2.6"
 	},
 	"dependencies": {
+		"@aws-sdk/client-s3": "^3.958.0",
 		"postgres": "^3.4.7",
 		"svelte-time": "1.0.0"
 	}

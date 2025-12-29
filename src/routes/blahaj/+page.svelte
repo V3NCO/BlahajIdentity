@@ -29,7 +29,7 @@
         urlParams = new URLSearchParams(window.location.search);
         containsId = urlParams.has('id');
         if (containsId) {
-            const blahaj_res = await fetch(`/api/getblahaj?uuid=${urlParams.get('id')}`)
+            const blahaj_res = await fetch(`/api/blahaj?uuid=${urlParams.get('id')}`, {method: 'GET'});
             blahaj = await blahaj_res.json()
             floofRating = (blahaj?.floof ?? 0) / 2;
             squishRating = (blahaj?.squish ?? 0) / 2;
