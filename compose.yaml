@@ -18,7 +18,7 @@ services:
       retries: 20
     networks:
       - default
-  nexus:
+  blahajid:
     image: ghcr.io/v3nco/blahajidentity:latest
     depends_on:
       db:
