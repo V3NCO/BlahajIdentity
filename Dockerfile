@@ -19,6 +19,7 @@ COPY --from=builder /app/drizzle drizzle/
 COPY ./entrypoint.sh /app/entrypoint.sh
 # Copy only production dependencies to keep the image small
 COPY package.json yarn.lock* ./
+RUN chmod +x /app/entrypoint.sh
 RUN yarn install --production --frozen-lockfile
 
 EXPOSE 3000
