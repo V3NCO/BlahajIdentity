@@ -2,6 +2,7 @@ version: "3.8"
 services:
   db:
     image: postgres:15
+    restart: unless-stopped
     environment:
       POSTGRES_USER: app
       POSTGRES_PASSWORD: ${POSTGRES_PASS}
@@ -20,6 +21,7 @@ services:
       - default
   blahajid:
     image: ghcr.io/v3nco/blahajidentity:latest
+    restart: unless-stopped
     depends_on:
       db:
         condition: service_healthy
