@@ -40,7 +40,7 @@
         color: gold;
         z-index: 1;
         position: absolute; left: 0; top: 0;
-        width: 45%; height: 100%;
+        width: 36%; height: 100%;
         overflow: hidden;
         pointer-events: none;
     }
